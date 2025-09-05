@@ -20,19 +20,17 @@ function guardarJSON(ruta, data) {
   fs.writeFileSync(ruta, JSON.stringify(data, null, 2));
 }
 
-// Página principal
 router.get("/", (req, res) => {
   const registros = leerJSON(registrosPath);
   res.render("index", { registros });
 });
 
-// Formulario
 router.get("/nuevo", (req, res) => {
-  const departamentos = leerJSON(departmentsPath);
-  res.render("add-record", { departamentos });
+  const departments = leerJSON(departmentsPath);  
+  res.render("add-record", { departments });      
 });
 
-// Guardar nuevo
+
 router.post("/guardar", (req, res) => {
   const { fecha, departamento, municipio } = req.body;
   const registros = leerJSON(registrosPath);
@@ -43,12 +41,16 @@ router.post("/guardar", (req, res) => {
   res.redirect("/");
 });
 
-// API municipios
 router.get("/municipios/:departamento", (req, res) => {
   const { departamento } = req.params;
   const towns = leerJSON(townsPath);
-  const municipios = towns.filter(t => t.deptCode === departamento).map(t => t.name);
+
+  const municipios = towns
+    .filter(t => t.department === departamento)   
+    .map(t => ({ code: t.code, name: t.name }));
+
   res.json(municipios);
 });
+
 
 export default router;

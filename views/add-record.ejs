@@ -9,7 +9,9 @@
 <body>
   <header>
     <h1>Nuevo Registro</h1>
-    <a href="/">⬅ Volver</a>
+    <nav>
+      <a href="/">Volver</a>
+    </nav>
   </header>
 
   <main>
@@ -26,12 +28,16 @@
       </select>
 
       <label>Municipio:</label>
-      <select id="municipio" name="municipio" required></select>
+      <select id="municipio" name="municipio" required>
+        <option value="">Seleccione</option>
+      </select>
 
       <button type="submit">Guardar</button>
     </form>
   </main>
 
   <script src="/js/dependientes.js"></script>
+  <script src="/js/dependientes.js"></script>
+
 </body>
 </html>
