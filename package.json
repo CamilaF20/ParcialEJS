@@ -1,0 +1,25 @@
+{
+  "name": "ParcialEJS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start":"node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilaF20/ParcialEJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilaF20/ParcialEJS/issues"
+  },
+  "homepage": "https://github.com/CamilaF20/ParcialEJS#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
